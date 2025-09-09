@@ -26,16 +26,16 @@ const Navbar = () => {
    <header className={` bg-white fixed top-0 right-0 left-0 z-50 ${isScrolled ? 'drop-shadow-[0_4px_25px_rgba(0,0,0,0.1)]' : ""}`}>
     <nav className='items-center flex justify-between max-w-[1400px] mx-auto md:h-[14vh] px-10 h-[12vh]'>
         {/* Logo */}
-        <Link to="/" className='text-3xl font-bold'>
+        <Link to="/" className='text-3xl font-bold'  data-aos="fade-down-right" data-aos-duration="1500">
             Gr<span className='text-orange-500 uppercase'>o</span>cify
         </Link>
 
         {/* Desktop Menu */}
-        <ul className='hidden items-center gap-x-15 md:flex'>
-            <li><Link to="/" className='font-semibold tracking-wider text-orange-500 hover:text-orange-500'>Home</Link></li>
-            <li><a href="" className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>About Us</a></li>
-            <li><a href="" className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>Process</a></li>
-            <li><Link to="/contact" className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>Contact Us</Link></li>
+        <ul className='hidden items-center gap-x-15 md:flex'  data-aos="fade-down-right"  data-aos-duration="1500">
+            <li><Link to="/"  data-aos="fade-down-right" data-aos-duration="1500" className='font-semibold tracking-wider text-orange-500 hover:text-orange-500'>Home</Link></li>
+            <li><a href="" data-aos="fade-down-right" data-aos-duration="2000" className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>About Us</a></li>
+            <li><a href="" data-aos="fade-down-right" data-aos-duration="2500" className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>Process</a></li>
+            <li><Link to="/contact" data-aos="fade-down-right" data-aos-duration="3000" className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>Contact Us</Link></li>
         </ul>
 
         {/* Nav Action  */}
@@ -43,15 +43,15 @@ const Navbar = () => {
         <div className='flex items-center gap-x-10'>
 
             {/* input field */}
-            <div className='hidden md:flex p-1 border-2 border-orange-500 rounded-full '>
+            <div className='hidden md:flex p-1 border-2 border-orange-500 rounded-full '  data-aos="fade-down-right"  data-aos-duration="1500">
                 <input type="text" name='text' id='text' placeholder='Search...' autoComplete='off' className='flex-1 height-[5vh] px-3 focus:outline-none ml-1'/>
                 <button className='bg-gradient-to-b from-red-600 to-orange-500 text-white w-10 h-10 flex justify-center items-center rounded-full text-xl'><IoIosSearch /></button>
             </div>
 
-            <a href="#" className='text-zinc-800 text-xl'>
+            <a href="#" className='text-zinc-800 text-xl'  data-aos="fade-down-right"  data-aos-duration="1500">
                 <GoHeartFill />
             </a>
-              <a href="#" className='text-zinc-800 text-xl'>
+              <a href="#" className='text-zinc-800 text-xl'  data-aos="fade-down-right"  data-aos-duration="1500">
                 <HiShoppingBag />
             </a>
             {/* Hamburger */}
