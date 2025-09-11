@@ -3,7 +3,7 @@ import { IoIosArrowForward } from 'react-icons/io'
 
 const Footer = () => {
   return (
-  <footer className='bg-zinc-100 py-20'>
+  <footer className='bg-zinc-100 py-20' id='contact'>
     <div  className='max-w-[1400px] px-10 mx-auto flex flex-wrap gap-y-12'>
         <div className='flex-1 basis-[300px]'>
          {/* Logo */}
