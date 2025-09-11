@@ -44,8 +44,8 @@ const rightValues = value.slice(2).map(item=>{
 
   return (
   <section>
-   <div className='max-w-[1400px] mx-auto px-10 py-20 -mt-15 '>
-    <Heading highlight="Our" heading="Values"/>
+   <div className='max-w-[1400px] mx-auto px-10 py-20 -mt-15 ' id='about'>
+    <Heading highlight="About" heading="Us"/>
 
     <div className='flex gap-5  mt-7 h-100 md:flex-row flex-col'>
         {/* left value  */}

@@ -34,13 +34,11 @@ const App = () => {
           path: "/allproducts",
           element: <AllProducts />,
         },
+          
        
       ],
-      
-
-     
-
     },
+    
   ]);
 
   return <RouterProvider router={router} />;

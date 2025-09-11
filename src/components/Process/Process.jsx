@@ -42,8 +42,8 @@ const Process = () => {
   });
 
   return (
-    <section>
-      <div className="max-w-[1400px] mx-auto px-10 py-20">
+    <section >
+      <div className="max-w-[1400px] mx-auto px-10 py-20" id="process">
         <div className="mr-auto w-fit">
           <Heading highlight="Our" heading="Process" />
         </div>
