@@ -34,13 +34,14 @@ const App = () => {
           path: "/allproducts",
           element: <AllProducts />,
         },
+          
        
       ],
-      
-
-     
-
     },
+      {
+          path: "/contact",
+          element: <Footer />,
+        },
   ]);
 
   return <RouterProvider router={router} />;
