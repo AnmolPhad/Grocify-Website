@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { GoHeartFill } from "react-icons/go";
 import { HiShoppingBag } from "react-icons/hi2";
 import { IoIosSearch } from "react-icons/io";
 import { TbMenu2, TbMenu3 } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
+import { FavoriteContext } from "../../context/FavoriteContext"; // adjust path if needed
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+
+  const { favorites } = useContext(FavoriteContext);
 
   const toggleMenu = () => setShowMenu(!showMenu);
 
@@ -41,7 +44,12 @@ const Navbar = () => {
         isScrolled ? "drop-shadow-[0_4px_25px_rgba(0,0,0,0.1)]" : ""
       }`}
     >
-      <nav className="items-center flex justify-between max-w-[1400px] mx-auto md:h-[14vh] px-10 h-[12vh]">
+      <nav
+        className="items-center flex justify-between max-w-[1400px] mx-auto md:h-[14vh] px-10 h-[12vh]"
+        data-aos="fade-down-right"
+        data-aos-duration="1500"
+      >
+        {/* Logo */}
         <Link to="/" className="text-3xl font-bold">
           Gr<span className="text-orange-500 uppercase">o</span>cify
         </Link>
@@ -75,6 +83,7 @@ const Navbar = () => {
 
         {/* Nav Actions */}
         <div className="flex items-center gap-x-10">
+          {/* Search bar (desktop only) */}
           <div className="hidden md:flex p-1 border-2 border-orange-500 rounded-full">
             <input
               type="text"
@@ -86,19 +95,29 @@ const Navbar = () => {
               <IoIosSearch />
             </button>
           </div>
-          <a href="#" className="text-zinc-800 text-xl">
+
+          {/* Favorites with badge */}
+          <Link to="/favorite" className="relative text-zinc-800 text-2xl hover:text-red-500">
             <GoHeartFill />
-          </a>
-          <a href="#" className="text-zinc-800 text-xl">
+            {favorites.length > 0 && (
+              <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {favorites.length}
+              </span>
+            )}
+          </Link>
+
+          {/* Shopping Bag */}
+          <a href="#" className="text-zinc-800 text-2xl hover:text-red-500">
             <HiShoppingBag />
           </a>
-          <a
-            href="#"
+
+          {/* Mobile Menu Button */}
+          <button
             className="text-3xl text-zinc-800 md:hidden"
             onClick={toggleMenu}
           >
             {showMenu ? <TbMenu3 /> : <TbMenu2 />}
-          </a>
+          </button>
         </div>
 
         {/* Mobile Menu */}
