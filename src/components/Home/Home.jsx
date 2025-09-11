@@ -8,19 +8,37 @@ import Discount from "../Discount/Discount";
 import Process from "../Process/Process";
 import Testimonials from "../Testimonials/Testimonials";
 import Footer from "../Footer/Footer";
-import Layout from "../Layout/Layout";
 
 const Home = () => {
   return (
-    <div>
-      <Hero />
-      <Category />
-      <Values />
-      <Products />
-      <Discount />
-      <Process />
-      <Testimonials />
-    </div>
+    <>
+      <Navbar />
+
+      <section id="home" style={{ scrollMarginTop: 40 }}>
+        <Hero />
+        <Category />
+      </section>
+
+      <section id="about" style={{ scrollMarginTop: 40 }}>
+        <Values />
+      </section>
+
+      <section id="process" style={{ scrollMarginTop: 40 }}>
+        <Process />
+      </section>
+
+     
+
+      <section id="products" style={{ scrollMarginTop: 40 }}>
+        <Products />
+        <Discount />
+      </section>
+       <section id="contact" style={{ scrollMarginTop: 40 }}>
+        <Testimonials />
+      </section>
+
+  
+    </>
   );
 };
 
