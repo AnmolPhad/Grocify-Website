@@ -23,11 +23,9 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
-        showMenu
-          ? "bg-transparent"
-          : isScrolled
-          ? "bg-white drop-shadow-[0_4px_25px_rgba(0,0,0,0.1)]"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        isScrolled
+          ? "bg-white/80 backdrop-blur-md drop-shadow-[0_4px_25px_rgba(0,0,0,0.1)]"
           : "bg-transparent"
       }`}
     >
@@ -114,17 +112,25 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* MOBILE MENU BACKDROP */}
+        {showMenu && (
+          <div 
+            className="md:hidden fixed inset-0 bg-black/5 z-40"
+            onClick={() => setShowMenu(false)}
+          />
+        )}
+
         {/* MOBILE MENU */}
         <ul
-          style={{
-            WebkitBackdropFilter: showMenu ? "blur(14px)" : undefined,
-            backdropFilter: showMenu ? "blur(14px)" : undefined,
-          }}
           className={`md:hidden flex-col gap-y-12 fixed left-1/2 transform -translate-x-1/2 ${
             showMenu
               ? "top-[80px] opacity-100"
-              : "top-[80px] -left-full opacity-0 pointer-events-none"
-          } w-[92%] max-w-sm bg-orange-500/40 rounded-xl p-6 text-center transition-all duration-300 shadow-xl z-[60]`}
+              : "top-[80px] opacity-0 pointer-events-none"
+          } w-[92%] max-w-sm bg-orange-500/30 backdrop-blur-xl rounded-xl p-6 text-center transition-all duration-300 shadow-xl z-50`}
+          style={{
+            WebkitBackdropFilter: "blur(14px)",
+            backdropFilter: "blur(14px)",
+          }}
         >
           <li className="p-3">
             <ScrollLink
