@@ -7,6 +7,7 @@ import SeaFood from "./components/SeaFood/SeaFood";
 import AllProducts from "./components/AllProducts/AllProducts";
 import Layout from "./components/Layout/Layout";
 import Favorite from "./components/Favorite/Favorite";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const App = () => {
           {
           path: "/favorite",
           element: <Favorite />,
+        },
+           {
+          path: "/cart",
+          element: <Cart />,
         },
           
        
