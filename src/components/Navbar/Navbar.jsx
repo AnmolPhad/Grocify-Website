@@ -31,12 +31,12 @@ const Navbar = () => {
     >
       <nav className="items-center flex justify-between max-w-[1400px] mx-auto md:h-[14vh] px-4 md:px-10 h-[12vh]">
         {/* Logo */}
-        <Link to="/" className="text-3xl font-bold">
+        <Link to="/" className="text-3xl font-bold"  data-aos="fade-down"  data-aos-duration="1500">
           Gr<span className="text-orange-500 uppercase">o</span>cify
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-x-12">
+        <ul className="hidden md:flex items-center gap-x-12"  data-aos="fade-down"  data-aos-duration="2000">
           <li>
             <ScrollLink to="home" smooth className="font-semibold text-orange-500 cursor-pointer">
               Home
