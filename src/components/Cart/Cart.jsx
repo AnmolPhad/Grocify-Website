@@ -9,7 +9,7 @@ const Cart = () => {
   const total = cart.reduce((acc, item) => acc + (item.price || 0) * item.qty, 0);
 
   return (
-    <div className="max-w-[1100px] mx-auto py-10 px-4">
+    <div className="max-w-[1100px] mx-auto py-10 px-4 mt-2">
       <h2 className="text-3xl font-bold mb-6  mt-10">Your Cart</h2>
 
       {cart.length === 0 ? (
@@ -20,10 +20,10 @@ const Cart = () => {
             {cart.map((item) => (
               <div
                 key={item.name}
-                className="flex flex-col items-center text-center md:flex-row md:items-center md:justify-between md:text-left bg-white p-4 rounded-lg shadow gap-6"
+                className="flex flex-col items-center  text-center md:flex-row md:items-center md:justify-between md:text-left bg-white p-4 rounded-lg shadow gap-6"
               >
-                <div className="flex items-center gap-4 flex-1 justify-center md:justify-start">
-                  <img src={item.image} alt={item.name} className="w-20 h-20 object-contain" />
+                <div className="flex items-center gap-4 flex-1 justify-center md:justify-start ">
+                  <img src={item.image} alt={item.name} className="w-20 h-20 object-contain " />
                   <div>
                     <h3 className="text-lg md:text-xl font-semibold">{item.name}</h3>
                     <p className="text-base md:text-lg">${item.price.toFixed(2)}</p>

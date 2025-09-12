@@ -23,6 +23,8 @@ import SliceCheese from '../../assets/slice-cheese.png'
 import RicottaCheese from '../../assets/ricotta-cheese.png'
 import Grapes from '../../assets/grapes.png'
 import Lettuce from '../../assets/lettuce.png'
+import Mango from '../../assets/fresh-mango-removebg-preview.png'
+import Papaya from '../../assets/ripe-papaya-fruit-isolated-on-wh-removebg-preview.png'
 
 
 const products = [
@@ -199,6 +201,20 @@ const products = [
         price: 3.0,
         category: 'Vegetables',
         image: Lettuce
+    },
+      {
+        id: 26,
+        name: 'Mango',
+        price: 3.2,
+        category: 'Fruits',
+        image: Mango
+    },
+     {
+        id: 27,
+        name: 'Papaya',
+        price: 2.8,
+        category: 'Fruits',
+        image: Papaya
     },
 ];
 

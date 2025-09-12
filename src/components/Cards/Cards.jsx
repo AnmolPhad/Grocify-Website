@@ -45,7 +45,7 @@ const Cards = ({ image, name, price }) => {
       {/* card content */}
       <div className="text-center">
         <h3 className="text-2xl font-semibold">{name}</h3>
-        <p className="text-2xl font-bold mt-4 mb-3">${price.toFixed(2)}</p>
+        <p className="text-2xl font-bold mt-4 mb-3">${price.toFixed(2)}/kg</p>
         <Button content="Shop Now" />
       </div>
     </div>

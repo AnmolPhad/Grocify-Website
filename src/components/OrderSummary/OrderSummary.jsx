@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../context/CartContext";
 import { dummyAddress } from "../../assets/assets"; // Import dummy address
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 const OrderSummary = ({ router }) => {
   const { cart } = useContext(CartContext);
@@ -32,7 +33,7 @@ const OrderSummary = ({ router }) => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-zinc-100">
+    <div className="max-w-2xl mx-auto p-4 bg-zinc-100 rounded-lg">
       <h2 className="text-2xl font-semibold mb-4">Order Summary</h2>
       <hr className="border-gray-500/30 my-5" />
 
@@ -82,12 +83,12 @@ const OrderSummary = ({ router }) => {
                     {address.state}
                   </li>
                 ))}
-                <li
-                  onClick={() => router?.push("/add-address")}
-                  className="px-4 py-2 hover:bg-gray-500/10 cursor-pointer text-center"
-                >
-                  + Add New Address
-                </li>
+               <Link to="/address"
+       
+          className="px-4 py-2 hover:bg-gray-500/10 cursor-pointer text-center items-center"
+        >
+          + Add New Address
+        </Link>
               </ul>
             )}
           </div>
