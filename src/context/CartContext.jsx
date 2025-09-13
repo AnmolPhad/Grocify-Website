@@ -1,21 +1,12 @@
 // src/context/CartContext.js
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  // ✅ Load from localStorage when app starts
-  const [cart, setCart] = useState(() => {
-    const savedCart = localStorage.getItem("cart");
-    return savedCart ? JSON.parse(savedCart) : [];
-  });
+  // ✅ Cart exists only in state, no localStorage
+  const [cart, setCart] = useState([]);
 
-  // ✅ Save to localStorage whenever cart changes
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
-  // Add item or increase qty
   const addToCart = (item) => {
     setCart((prev) => {
       const exists = prev.find((p) => p.name === item.name);
@@ -28,7 +19,6 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // Decrease quantity
   const decreaseQty = (name) => {
     setCart((prev) =>
       prev
@@ -37,12 +27,10 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Remove completely
   const removeFromCart = (name) => {
     setCart((prev) => prev.filter((p) => p.name !== name));
   };
 
-  // Clear entire cart
   const clearCart = () => setCart([]);
 
   return (
