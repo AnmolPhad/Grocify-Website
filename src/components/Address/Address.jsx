@@ -1,11 +1,8 @@
 // src/pages/Address.jsx
-import React, { useState, useContext } from "react";
-import { AddressContext } from "../../context/AddressContext";
+import React, { useState } from "react";
 import myLocationImage from "../../assets/my_location_image.svg";
 
 const Address = () => {
-  const { addAddress } = useContext(AddressContext);
-
   const [address, setAddress] = useState({
     fullName: "",
     phoneNumber: "",
@@ -18,10 +15,7 @@ const Address = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    // ✅ Save to context + localStorage
-    addAddress(address);
-
-    // Reset form
+    // ✅ Do NOT save anywhere, just reset
     setAddress({
       fullName: "",
       phoneNumber: "",
@@ -31,7 +25,7 @@ const Address = () => {
       state: "",
     });
 
-    alert("✅ Address saved locally!");
+    alert("✅ Not saved anywhere currently.");
   };
 
   return (
@@ -115,7 +109,7 @@ const Address = () => {
           type="submit"
           className="w-full mt-6 bg-orange-600 text-white py-3 rounded hover:bg-orange-700 uppercase"
         >
-          Save address
+          Reset Address
         </button>
       </form>
 
