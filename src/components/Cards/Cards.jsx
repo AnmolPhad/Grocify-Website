@@ -3,6 +3,7 @@ import { FaHeart, FaPlus } from "react-icons/fa";
 import Button from "../Button/Button";
 import { FavoriteContext } from "../../context/FavoriteContext";
 import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Cards = ({ image, name, price }) => {
   const { addToFavorites, removeFromFavorites, isFavorite } = useContext(FavoriteContext);
@@ -46,7 +47,12 @@ const Cards = ({ image, name, price }) => {
       <div className="text-center">
         <h3 className="text-2xl font-semibold">{name}</h3>
         <p className="text-2xl font-bold mt-4 mb-3">${price.toFixed(2)}/kg</p>
-        <Button content="Shop Now" />
+
+      <Link to="/cart" onClick={() => addToCart({ image, name, price })}>
+  <Button content="Shop Now" />
+</Link>
+
+       
       </div>
     </div>
   );

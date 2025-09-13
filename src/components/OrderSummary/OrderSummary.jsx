@@ -119,7 +119,7 @@ const OrderSummary = () => {
             <p>Tax (2%)</p>
             <p>
               {currency}
-              {Math.floor(getCartAmount() * 0.02)}
+              {Math.floor(getCartAmount() * 0.2)}
             </p>
           </div>
           <div className="flex justify-between font-bold border-t pt-2">
